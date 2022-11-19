@@ -5,10 +5,11 @@ pipeline {
         nodejs 'NODE_HOME'
     }
     
+
     stages {
         stage('Getting project from Github') {
             steps {
-                git branch : 'produit' ,
+                git branch : 'main' ,
                     url : 'https://github.com/iifast2/devops-front-end.git';
             }
         }
@@ -30,7 +31,7 @@ pipeline {
         }
         stage ('Deploy our image'){
             steps{
-                sh 'sudo docker login -u iifast2 -p yourpassword';
+                sh 'sudo docker login -u iifast2 -p @25622677';
                 sh 'sudo docker push iifast2/achat_front'
                 }
             }
